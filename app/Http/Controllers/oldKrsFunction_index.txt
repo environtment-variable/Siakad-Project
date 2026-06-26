@@ -1,0 +1,22 @@
+        // // Gunakan fallback ke string kosong jika username null agar query tidak crash
+        // $npmLogon = auth()->user()->username_kaitan ?? '';
+        //
+        // $mhs = Mahasiswa::where('npm', $npmLogon)->first();
+        //
+        // if (!$mhs) {
+        //     $mhs = (object) [
+        //         'nama_mahasiswa' => auth()->user()->name,
+        //         'npm' => $npmLogon ?: 'NPM Tidak Terdeteksi',
+        //     ];
+        // }
+        //
+        // // KUNCI: Join dilakukan dari krs langsung ke matakuliahs & jadwals lewat kode_matakuliah
+        // $krsAktif = DB::table('krs')
+        // ->join('matakuliahs', 'krs.kode_matakuliah', '=', 'matakuliahs.kode_matakuliah')
+        // ->join('jadwals', 'matakuliahs.kode_matakuliah', '=', 'jadwals.kode_matakuliah')
+        // ->join('dosens', 'jadwals.nidn', '=', 'dosens.nidn')
+        // ->where('krs.npm', $npmLogon)
+        // ->select('jadwals.*', 'matakuliahs.nama_matakuliah', 'matakuliahs.sks', 'dosens.nama as nama_dosen', 'jadwals.ruangan')
+        // ->get();
+        //
+        // return view('mahasiswa.dashboard', compact('mhs', 'krsAktif'));
